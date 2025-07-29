@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://b0ra3j358kadn"]
+
+[ext_resource type="Texture2D" uid="uid://njv1k2f6p0g4" path="res://assets/Aventurero (Animacion Correr Spritesheet).png" id="1_wmfi0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1l4o"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(0, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbwqk"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(30, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i67h"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(60, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa1p3"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(90, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22thn"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(120, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yttoo"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(150, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qw4f"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(180, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpskj"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(210, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfgi3"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(240, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e3jd"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(270, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41vhn"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(300, 0, 30, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_civbl"]
+atlas = ExtResource("1_wmfi0")
+region = Rect2(330, 0, 30, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4nkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1l4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbwqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i67h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa1p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22thn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yttoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qw4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpskj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfgi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e3jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41vhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_civbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yg4fe"]
+radius = 6.0
+height = 34.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(68, 68)
+sprite_frames = SubResource("SpriteFrames_a4nkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(69, 71)
+shape = SubResource("CapsuleShape2D_yg4fe")
