@@ -22,6 +22,10 @@ GLOBAL="*res://CLASE 4 AUTOLOADS/GLOBAL.gd"
 
 project/assembly_name="CursoGodot4"
 
+[global_group]
+
+enemies=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

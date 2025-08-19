@@ -1,0 +1,137 @@
+[gd_scene load_steps=18 format=3 uid="uid://ccd1u6k7efcfa"]
+
+[ext_resource type="Script" uid="uid://csjnn4vrrxuoe" path="res://CLASE 5 SEÑALES/slime.gd" id="1_2jj8s"]
+[ext_resource type="Texture2D" uid="uid://7varcjts4px0" path="res://assets/Slime (Animacion Idle).png" id="2_3p8qt"]
+[ext_resource type="Texture2D" uid="uid://bsng0mvuflnop" path="res://assets/Slime (Animacion Saltar).png" id="3_w62i7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va1v7"]
+size = Vector2(26.25, 21.3125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va1v7"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(0, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5b23"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(40, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qi3h"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(80, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1lti"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(120, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goq5g"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(160, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuj57"]
+atlas = ExtResource("3_w62i7")
+region = Rect2(200, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w62i7"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(0, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3usu"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(40, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrslx"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(80, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwgv1"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(120, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v16pe"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(160, 0, 40, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjbam"]
+atlas = ExtResource("2_3p8qt")
+region = Rect2(200, 0, 40, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jj8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va1v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5b23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qi3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1lti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goq5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuj57")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w62i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3usu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrslx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwgv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v16pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjbam")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Slime" type="CharacterBody2D" groups=["enemies"]]
+position = Vector2(28, 18)
+collision_layer = 2
+collision_mask = 7
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
+script = ExtResource("1_2jj8s")
+gravity = 7
+jump_strength = 150
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, 0.3125)
+shape = SubResource("RectangleShape2D_va1v7")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_2jj8s")
+animation = &"Jump"
+
+[node name="Hit Point" type="Area2D" parent="Sprite"]
+collision_mask = 2
+monitorable = false
+
+[node name="Area Hit" type="CollisionShape2D" parent="Sprite/Hit Point"]
+position = Vector2(0, -0.65625)
+shape = SubResource("RectangleShape2D_va1v7")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="Sprite/Hit Point" to="." method="_on_hit_point_body_entered"]
