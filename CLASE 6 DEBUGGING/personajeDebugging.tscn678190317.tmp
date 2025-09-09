@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bq0kfw2ioore5"]
 
+[ext_resource type="Script" uid="uid://c4ebiyhmpe47b" path="res://CLASE 6 DEBUGGING/playerDebugging.gd" id="1_iagan"]
 [ext_resource type="Texture2D" uid="uid://njv1k2f6p0g4" path="res://assets/Aventurero (Animacion Correr Spritesheet).png" id="1_k4anv"]
-[ext_resource type="Script" uid="uid://dyfj363r3brbn" path="res://CLASE 5 SEÑALES/player.gd" id="1_vkgkx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1l4o"]
 atlas = ExtResource("1_k4anv")
@@ -100,7 +100,7 @@ radius = 6.0
 height = 34.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_vkgkx")
+script = ExtResource("1_iagan")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(68, 68)
