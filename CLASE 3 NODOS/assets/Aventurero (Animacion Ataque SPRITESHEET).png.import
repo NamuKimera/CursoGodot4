@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tpjn5euub8w3"
-path="res://.godot/imported/Aventurero (Animacion Ataque).png-35b7382c4516114fbdad2804bc08c737.ctex"
+uid="uid://bdj4b3lwpk5gn"
+path="res://.godot/imported/Aventurero (Animacion Ataque SPRITESHEET).png-a000934a197d87e9aeaf7db0cfb1385c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Aventurero (Animacion Ataque).png"
-dest_files=["res://.godot/imported/Aventurero (Animacion Ataque).png-35b7382c4516114fbdad2804bc08c737.ctex"]
+source_file="res://CLASE 3 NODOS/assets/Aventurero (Animacion Ataque SPRITESHEET).png"
+dest_files=["res://.godot/imported/Aventurero (Animacion Ataque SPRITESHEET).png-a000934a197d87e9aeaf7db0cfb1385c.ctex"]
 
 [params]
 

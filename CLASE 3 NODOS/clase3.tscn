@@ -1,54 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0ra3j358kadn"]
+[gd_scene load_steps=10 format=3 uid="uid://b0ra3j358kadn"]
 
-[ext_resource type="Texture2D" uid="uid://njv1k2f6p0g4" path="res://assets/Aventurero (Animacion Correr Spritesheet).png" id="1_wmfi0"]
+[ext_resource type="Texture2D" uid="uid://bdj4b3lwpk5gn" path="res://CLASE 3 NODOS/assets/Aventurero (Animacion Ataque SPRITESHEET).png" id="1_wmfi0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1l4o"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(0, 0, 30, 55)
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbwqk"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(30, 0, 30, 55)
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6i67h"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(60, 0, 30, 55)
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qa1p3"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(90, 0, 30, 55)
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22thn"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(120, 0, 30, 55)
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yttoo"]
 atlas = ExtResource("1_wmfi0")
-region = Rect2(150, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qw4f"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(180, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mpskj"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(210, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfgi3"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(240, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3e3jd"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(270, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_41vhn"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(300, 0, 30, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_civbl"]
-atlas = ExtResource("1_wmfi0")
-region = Rect2(330, 0, 30, 55)
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a4nkl"]
 animations = [{
@@ -70,24 +46,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yttoo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3qw4f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mpskj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lfgi3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3e3jd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_41vhn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_civbl")
 }],
 "loop": true,
 "name": &"default",
@@ -100,12 +58,12 @@ height = 34.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(68, 68)
 sprite_frames = SubResource("SpriteFrames_a4nkl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(69, 71)
 shape = SubResource("CapsuleShape2D_yg4fe")
