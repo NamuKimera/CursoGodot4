@@ -17,4 +17,4 @@ func _ready() -> void:
 	#var player = get_node("Player")
 	#player.jump()
 	
-	print(demoArray[3])
+	#print(demoArray[3])

@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=3 uid="uid://dteb1i4x412cf"]
+
+[ext_resource type="Script" uid="uid://bbluv7nlvipe3" path="res://CLASE 7 MOVIMIENTO/scripts/movimiento_2.5d.gd" id="1_03khi"]
+[ext_resource type="Texture2D" uid="uid://63c0fdntpfmk" path="res://CLASE 7 MOVIMIENTO/sprites/background.jpg" id="1_5y6vg"]
+[ext_resource type="Texture2D" uid="uid://cn1w7ykg0hy3v" path="res://CLASE 7 MOVIMIENTO/sprites/tree.png" id="1_10tyv"]
+[ext_resource type="Texture2D" uid="uid://cayu52d7svaem" path="res://icon.svg" id="1_v84xm"]
+[ext_resource type="Shader" uid="uid://m7bf87aa710u" path="res://CLASE 7 MOVIMIENTO/shader/crt.gdshader" id="5_ei8s7"]
+
+[sub_resource type="VoxelGIData" id="VoxelGIData_15kxi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yo34n"]
+size = Vector3(80, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sttgk"]
+albedo_color = Color(0.619608, 0.941176, 0.25098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3twly"]
+size = Vector3(8, 4, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjddo"]
+albedo_color = Color(0.427451, 0.298039, 0.254902, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d48wt"]
+data = PackedVector3Array(-10, 0.5, 5, 10, 0.5, 5, -10, -0.5, 5, 10, 0.5, 5, 10, -0.5, 5, -10, -0.5, 5, 10, 0.5, -5, -10, 0.5, -5, 10, -0.5, -5, -10, 0.5, -5, -10, -0.5, -5, 10, -0.5, -5, 10, 0.5, 5, 10, 0.5, -5, 10, -0.5, 5, 10, 0.5, -5, 10, -0.5, -5, 10, -0.5, 5, -10, 0.5, -5, -10, 0.5, 5, -10, -0.5, -5, -10, 0.5, 5, -10, -0.5, 5, -10, -0.5, -5, 10, 0.5, 5, -10, 0.5, 5, 10, 0.5, -5, -10, 0.5, 5, -10, 0.5, -5, 10, 0.5, -5, -10, -0.5, 5, 10, -0.5, 5, -10, -0.5, -5, 10, -0.5, 5, 10, -0.5, -5, -10, -0.5, -5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lelqx"]
+
+[sub_resource type="Environment" id="Environment_xntw0"]
+background_mode = 1
+background_color = Color(0.129412, 0.129412, 0.129412, 1)
+ambient_light_color = Color(0.811765, 0.847059, 0.862745, 1)
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+adjustment_enabled = true
+adjustment_saturation = 0.4
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_spr6m"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 9.0
+dof_blur_far_transition = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8h5kk"]
+shader = ExtResource("5_ei8s7")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.01
+shader_parameter/noise_opacity = 0.1
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, -0.353553, 0.612372, 0.612372, 0.126827, 0.78033, -0.353553, 0.926777, 0.126826, 0, 10, 5)
+light_color = Color(0.890196, 0.94902, 0.992157, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(26, 11, 14)
+data = SubResource("VoxelGIData_15kxi")
+
+[node name="Terrain" type="StaticBody3D" parent="."]
+
+[node name="Background" type="Sprite3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -13)
+pixel_size = 0.05
+billboard = 1
+texture = ExtResource("1_5y6vg")
+
+[node name="Tree_1" type="Sprite3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, -3)
+gi_mode = 2
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_10tyv")
+
+[node name="Tree_2" type="Sprite3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4, -3)
+gi_mode = 2
+billboard = 1
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1_10tyv")
+
+[node name="Ground" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+gi_mode = 2
+mesh = SubResource("BoxMesh_yo34n")
+surface_material_override/0 = SubResource("StandardMaterial3D_sttgk")
+
+[node name="Mountain" type="MeshInstance3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+gi_mode = 2
+mesh = SubResource("BoxMesh_3twly")
+surface_material_override/0 = SubResource("StandardMaterial3D_jjddo")
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_d48wt")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_03khi")
+speed = 6.0
+
+[node name="Sprite" type="Sprite3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+gi_mode = 2
+billboard = 1
+double_sided = false
+alpha_cut = 2
+texture = ExtResource("1_v84xm")
+
+[node name="Collision" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_lelqx")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.891007, 0.453991, 0, -0.453991, 0.891007, 0, 8, 7)
+environment = SubResource("Environment_xntw0")
+attributes = SubResource("CameraAttributesPractical_spr6m")
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Shader"]
+material = SubResource("ShaderMaterial_8h5kk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
