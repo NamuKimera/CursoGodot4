@@ -1,15 +1,15 @@
-Bienvenidos a todos al curso de Godot Engine 4, en este archivo, voy a contarles todo lo que veran en el curso y lo que no.
+Bienvenidos a todos al curso de Introduccion a Godot Engine 4, en este archivo, voy a contarles todo lo que veran en el curso y lo que no.
+
+# [CURSO EN YOUTUBE](https://www.youtube.com/playlist?list=PLva-iRYQSilVjNpf839HKQDUGEikNyX3I)
 
 # VEREMOS
 
 - Las funciones principales del motor, y como empezar a desarrollar sus propios videojuegos, asi como exportarlos.
-
 - La version de Godot tanto para PC como para Movil.
 
 # NO VEREMOS
 
 - Aprender el lenguaje GDScript, eso lo veremos en un curso aparte.
-
 - Todos y cada uno de los nodos del motor, eso lo veremos en otros videos.
 
 # CLASES ORDENADAS
@@ -62,3 +62,8 @@ Bienvenidos a todos al curso de Godot Engine 4, en este archivo, voy a contarles
 
 - Exportar
 
+## CLASE 13
+- Godot en Movil P1
+
+## CLASE 14
+- Godot en Movil P2
