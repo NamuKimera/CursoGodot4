@@ -44,26 +44,21 @@ Bienvenidos a todos al curso de Introduccion a Godot Engine 4, en este archivo, 
 
 ## CLASE 8
 
-- Animation Player y Animation Tree
+- Animation Player
+- Animation Tree
+- Tweens
 
 ## CLASE 9
 
-- Tweens
+- Tiles 2D y 3D
 
 ## CLASE 10
 
-- Tiles 2D y 3D
+- Interfaces de Usuario
 
 ## CLASE 11
 
-- Interfaces de Usuario
-
-## CLASE 12
-
 - Exportar
 
-## CLASE 13
-- Godot en Movil P1
-
-## CLASE 14
-- Godot en Movil P2
+## CLASE 12
+- Godot en Movil
